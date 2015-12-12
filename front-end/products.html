@@ -1,0 +1,8 @@
+<section ng-controller="ProductController as productController">
+  <h1>Products</h1>
+  <ul>
+    <li ng-repeat="product in productController.products" ng-click="main.selectCharacter(character)">
+      {{ product.name }} - {{ product.price }}pounds
+    </li>
+  </ul>
+</section>

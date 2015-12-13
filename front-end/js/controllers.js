@@ -4,14 +4,16 @@ angular
   .controller("ProductController", ProductController);
 
 
+ProductController.$inject = ['Product'];
+
 function MainController() {
 
 }
 
-function ProductController() {
-  this.products = [
-    {name: "Awesome product 1", price: 110, description: "Really cool 1!"},
-    {name: "Awesome product 2", price: 120, description: "Really cool 2!"},
-    {name: "Awesome product 3", price: 130, description: "Really cool 3!"}
-  ];
+function ProductController(Product) {
+  this.products = Product.query();
+
+  this.selectProduct = function(product) {
+    this.selectedProduct = Product.get({ id: product._id });
+  }
 }

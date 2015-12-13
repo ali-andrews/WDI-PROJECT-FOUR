@@ -3,6 +3,7 @@ angular
   .factory('Product', Product);
 
 Product.$inject = ['$resource'];
+
 function Product($resource) {
   // Obtain our resource class
   var Product = $resource('http://localhost:3000/products/:id', null, {

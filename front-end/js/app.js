@@ -6,22 +6,27 @@ function MainRouter($stateProvider, $urlRouterProvider) {
   $stateProvider
       .state('home', {
         url: "/",
-        templateUrl: "home.html",
+        templateUrl: "partials/home.html",
       })
       .state('products', {
         url: "/products",
-        templateUrl: "products.html",
+        templateUrl: "partials/products.html",
+      })
+      .state('viewProduct', {
+        url: "/products/:id",
+        templateUrl: "partials/product.html",
+        controller: 'ProductViewController'
       })
       .state('about', {
         url: "/about",
-        templateUrl: "about.html",
+        templateUrl: "partials/about.html",
       })
       .state('login', {
         url: "/login",
-        templateUrl: "login.html",
+        templateUrl: "partials/login.html",
       })
       .state('register', {
         url: "/register",
-        templateUrl: "register.html",
+        templateUrl: "partials/register.html",
       });
 }

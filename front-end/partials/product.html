@@ -2,6 +2,6 @@
   <h1>{{ productViewController.product.name }}</h1>
   <p>{{ productViewController.product.description }}</p>
   <h3>£{{ productViewController.product.price }}</h3>
+  <p><input type="button" value="Add to cart" ng-click="productViewController.addToCart()" /></p>
   <p><img src="{{ productViewController.product.image }}" /></p>
-
 </section>

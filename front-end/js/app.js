@@ -28,5 +28,9 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       .state('register', {
         url: "/register",
         templateUrl: "partials/register.html",
+      })
+      .state('cart', {
+        url: "/cart",
+        templateUrl: "partials/cart.html",
       });
 }

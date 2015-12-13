@@ -1,0 +1,11 @@
+<h3>Cart</h3>
+
+<section ng-controller="CartController as cartController">
+  <ul>
+    <li ng-repeat="product in cartController.products">
+      <img src="{{ product.image }}" width="200" />
+      {{ product.name }} <strong>£{{ product.price }}</strong>
+    </li>
+  </ul>
+  <strong>Total: £{{ cartController.totalAmount }}</strong>
+</section>

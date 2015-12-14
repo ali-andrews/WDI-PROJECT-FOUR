@@ -8,9 +8,14 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var methodOverride = require('method-override');
 var cors           = require('cors');
+var passport   = require("passport");
 
 //Mongoose Database Structure
 mongoose.connect("mongodb://localhost:27017/babybag");
+
+// Setup Passport
+require('./config/passport')(passport);
+
 
 //Setting up middleawre
 app.use(morgan('dev')); 
@@ -19,8 +24,8 @@ app.use(bodyParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-// app.use(expressJWT({secret: 'dadada34342dadadabbsj'}));
-  // .unless({path: ['/authorize', '/join'], method: 'post'}));
+// app.use(expressJWT({secret: 'dadada34342dadadabbsj'}))
+//   .unless({path: ['/authorize', '/join'], method: 'post'}));
 
 
 //Set up method-override
@@ -41,13 +46,13 @@ app.use(methodOverride(function(req, res){
 
 // THIS SHOULD BE ENABLED FOR SECURITY...
 
-// app.use('/api', expressJWT({ secret: secret })
+// app.use('/', expressJWT({ secret: process.env.PROJECT_FOUR_SECRET })
 //   .unless({
 //     path: [
-//       { url: '/api/login', methods: ['POST'] },
-//       { url: '/api/register', methods: ['POST'] },
-//       { url: '/api/categories', methods: ['GET'] },
-//       { url: '/api/users', methods: ['GET'] }
+//       { url: '/login', methods: ['POST'] },
+//       { url: '/register', methods: ['POST'] },
+//       // { url: '/products', methods: ['GET'] },
+//       { url: '/users', methods: ['GET'] }
 //     ]
 //   }));
 
@@ -60,6 +65,9 @@ app.use(function (err, req, res, next) {
 
 //Set up our public folder
 app.use(express.static(__dirname + '/public'));
+
+app.use(passport.initialize());
+
 
 //Setting up routes
 var router = require(__dirname + '/config/routes');

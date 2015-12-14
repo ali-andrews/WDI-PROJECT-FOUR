@@ -26,7 +26,7 @@
 
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
-<body>
+<body ng-controller="UserController as users">
 
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -48,7 +48,8 @@
           <li><a ui-sref-active="active" ui-sref="products">Products</a></li>
           <li><a ui-sref-active="active" ui-sref="about">About</a></li>
           <li><a ui-sref-active="active" ui-sref="register">Register</a></li>
-          <li><a ui-sref-active="active" ui-sref="login">Login</a></li>
+          <li><a ui-sref-active="active" ng-show="!users.isLoggedIn()" ui-sref="login">Login</a></li>
+          <li><a ui-sref-active="active" ng-show="users.isLoggedIn()" ng-click="users.disappear()">Logout</a></li>
     
 
       <ul class="nav navbar-nav navbar-right">
@@ -73,10 +74,12 @@
     <a ui-sref-active="active" ui-sref="cart">My Cart</a>
   </nav> -->
 
-  <div class="wrapper" ng-controller="UserController as users">    
+  <div class="wrapper">    
     <div ui-view></div>
   </div>
-
+    
+  </body>
+  </html>
 
   
   <!-- {{main.characterTest.test}}
@@ -108,6 +111,3 @@
       </li>
     </ul>
   </section> -->
-  
-</body>
-</html>

@@ -42,7 +42,7 @@ function UserController(User, TokenService) {
   }
 
   self.isLoggedIn = function() {
-    // return !!TokenService.getToken();
+    return !!TokenService.getToken();
   }
 
   if(self.isLoggedIn()) {

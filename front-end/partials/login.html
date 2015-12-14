@@ -1,14 +1,16 @@
 <section>
 <h3>Login</h3>
 <form id="authorize" ng-submit="users.authorize()">
-  <label for="email">Email</label>
-  <input type="text" name="email" placeholder="What is your username?" ng-model="users.user.email">
+  <label for="email">Email:</label>
+  <input type="text" name="email" placeholder="Email" ng-model="users.user.email">
 
-  <label for="password">Password</label>
-  <input type="password" name="password" placeholder="What is your password?" ng-model="users.user.password">
+  <label for="password">Password:</label>
+  <input type="password" name="password" placeholder="Password" ng-model="users.user.password">
 
   <input type="submit" value="Login">
 </form>
+
+<div ng-show="users.isLoggedIn()"><h1>Hello {{users.user.firstname}}</h1><p> Welcome to Baby Bag - how can we help you (and you're little one)? </p></div>
 
 
 </section>

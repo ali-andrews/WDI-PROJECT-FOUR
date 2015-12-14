@@ -9,6 +9,7 @@ var session = require('express-session');
 var methodOverride = require('method-override');
 var cors           = require('cors');
 var passport   = require("passport");
+var User = require ('./models/user');
 
 //Mongoose Database Structure
 mongoose.connect("mongodb://localhost:27017/babybag");

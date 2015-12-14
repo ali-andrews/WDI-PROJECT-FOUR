@@ -3,7 +3,7 @@ var User = require('../models/user');
 function indexUsers(req, res){
   User.find(function(error, users){
     if (error) return res.status(404).json({message: 'There is no MI6, and there are no agents here.'});
-    return res.status(200).send(agents);
+    return res.status(200).send(users);
   });
 }
 

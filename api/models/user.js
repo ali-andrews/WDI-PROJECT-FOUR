@@ -2,31 +2,25 @@ var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 
 var UserSchema = mongoose.Schema({
-  name: String, 
-  email: String, 
-  password: String
+  username: {type: String, unique: true},   
+  firstname: {type: String}, 
+  email: {type: String, unique: true, required: true},  
+  street: {type: String},   
+  address: {type: String},  
+  city: {type: String}, 
+  postcode: {type: String}, 
+  password: {type: String, required: true}
 });
-
-UserSchema.set('toJSON', {
-  transform: function(doc, ret, options) {
-    var returnJson = {
-      id: ret._id,
-      username: ret.username,
-      email: ret.email,
-      password: ret.password
-    };
-    return returnJson;
-  }
-});
-
 
 UserSchema.pre('save', function(next) {
   this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(8));
   next();
 });
 
-UserSchema.methods.validPassword = function(password) {
-  return bcrypt.compareSync(password, this.password);
+UserSchema.methods.authenticate = function(password, callback) {
+  return bcrypt.compare(password, this.password, function(err, isMatch){
+    callback(null, isMatch)
+  });
 }
 
 module.exports = mongoose.model("User", UserSchema);

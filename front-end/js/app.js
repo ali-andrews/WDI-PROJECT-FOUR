@@ -1,5 +1,6 @@
 angular
   .module("babyBagApp", ['ngResource', 'ui.router', 'angular-jwt'])
+  .constant("API", "http://localhost:3000/")
   .config(Interceptor)
   .config(MainRouter);
 

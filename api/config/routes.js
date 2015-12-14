@@ -2,6 +2,7 @@ var express           = require('express');
 var router            = express.Router();
 var productsController   = require('../controllers/productsController');
 var authenticationController = require('../controllers/authenticationController');
+var usersController = require('../controllers/usersController');
 
 router.route('/products').get(productsController.productsIndex)
 router.route('/products/:id').get(productsController.productsShow)
@@ -14,8 +15,8 @@ router.post('/join', authenticationController.signup);
 // router.post('/login', staticsController.login)
 // router.post('/register', staticsController.register)
 
-// router.route('/users')
-//   .get(usersController.usersIndex)
+router.route('/users')
+.get(usersController.indexUsers);
 
 //   router.route('/users/:id')
 //     .get(usersController.usersShow)

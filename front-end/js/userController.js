@@ -15,7 +15,7 @@ function UserController(User, TokenService) {
    if (token) {
      console.log(res);
      self.getUsers();
-     self.user = TokenService.getCurrentUser();
+     self.user = TokenService.getUser();
    }
 
    self.message = res.message;
@@ -23,12 +23,12 @@ function UserController(User, TokenService) {
 
   self.authorize = function() {
     User.authorize(self.user, handleLogin);
-    console.log("click")
+    console.log("click I DONT WORK")
   }
 
   self.join = function() {
     User.join(self.user, handleLogin);
-    console.log("doesn't work")
+    console.log(self.user);
   }
 
   self.disappear = function() {

@@ -1,21 +1,20 @@
 angular
   .module("babyBagApp")
-  .controller("MainController", MainController)
+  // .controller("MainController", MainController)
   .controller("ProductController", ProductController)
   .controller("ProductViewController", ProductViewController)
   .controller("CartController", CartController);
 
+// MainController.$inject = ['User', 'TokenService']
+// function MainController() {
+// }
+
 ProductController.$inject = ['Product'];
-ProductViewController.$inject = ["$window", "$stateParams", 'Product'];
-CartController.$inject = ["$window"];
-
-function MainController() {
-}
-
 function ProductController(Product) {
   this.products = Product.query();
 }
 
+ProductViewController.$inject = ["$window", "$stateParams", 'Product'];
 function ProductViewController($window, $stateParams, Product) {
   this.product = Product.get({ id: $stateParams.id });
 
@@ -35,6 +34,7 @@ function ProductViewController($window, $stateParams, Product) {
   }
 }
 
+CartController.$inject = ["$window"];
 function CartController($window) {
   var totalAmount = 0;  
   this.products = angular.fromJson($window.localStorage.getItem("cart"));  

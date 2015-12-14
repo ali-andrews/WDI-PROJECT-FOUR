@@ -1,4 +1,5 @@
 var express = require('express');
+var expressJWT = require('express-jwt')
 var app = express();
 var mongoose = require('mongoose');
 var morgan = require('morgan');
@@ -7,7 +8,6 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var methodOverride = require('method-override');
 var cors           = require('cors');
-
 
 //Mongoose Database Structure
 mongoose.connect("mongodb://localhost:27017/babybag");
@@ -18,7 +18,10 @@ app.use(cookieParser());
 app.use(bodyParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-app.use(passport.initialize());
+
+// app.use(expressJWT({secret: 'dadada34342dadadabbsj'}));
+  // .unless({path: ['/authorize', '/join'], method: 'post'}));
+
 
 //Set up method-override
 app.use(methodOverride(function(req, res){
@@ -60,7 +63,7 @@ app.use(express.static(__dirname + '/public'));
 
 //Setting up routes
 var router = require(__dirname + '/config/routes');
-app.use("/api", router);
+app.use("/", router);
 
 app.listen(3000);
 console.log("Express is listening on localhost:3000");

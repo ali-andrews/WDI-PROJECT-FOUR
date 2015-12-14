@@ -9,6 +9,20 @@ var User    = require('../models/user');
 // var Cart    = require('../models/cart');
 // var Order    = require('../models/order');
 
+Product.remove({});
+User.remove({});
+
+var user1 = new User({
+  name: 'Test user',
+  email: 'test@test.com',
+  password: 'password'
+});
+
+user1.save(function(err, user1){
+  if (err) return console.log(err);
+  console.log('User 1 Added!', user1);
+});
+
 // ProductType seed data
 var product1 = new Product({
   name: "Karicare Gold+ From 6 Months",
@@ -25,7 +39,7 @@ product1.save(function(err, product1){
 var product2 = new Product({
   name: "Farex Baby Rice Cereal Pouch",
   description: "Trusted by mums and dads for generations, Farex Baby Rice Cereal is the ideal first food. Made from ground rice", 
-  price: 1.70,
+  price: 1.75,
   image: "http://cdn.shopify.com/s/files/1/0789/3885/products/131_f824732a-e1b6-464e-bb6a-4d6418f688cd_large.jpeg?v=1430790739",
 });
 

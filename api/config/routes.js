@@ -1,14 +1,14 @@
 var express           = require('express');
 var router            = express.Router();
 var productsController   = require('../controllers/productsController');
+var authenticationController = require('../controllers/authenticationController');
 
+router.route('/products').get(productsController.productsIndex)
+router.route('/products/:id').get(productsController.productsShow)
 
-router.route('/products')
- .get(productsController.productsIndex)
- 
+router.post('/authorize', authenticationController.login);
+router.post('/join', authenticationController.signup);
 
-router.route('/products/:id')
- .get(productsController.productsShow)
 
 
 // router.post('/login', staticsController.login)

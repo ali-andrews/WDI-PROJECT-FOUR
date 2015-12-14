@@ -1,7 +1,14 @@
 angular
-  .module("babyBagApp", ['ngResource', 'ui.router'])
+  .module("babyBagApp", ['ngResource', 'ui.router', 'angular-jwt'])
+  .config(Interceptor)
   .config(MainRouter);
 
+Interceptor.$inject = ['$httpProvider'];
+function Interceptor($httpProvider) {
+  $httpProvider.interceptors.push('AuthInterceptor');
+};
+
+MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
 function MainRouter($stateProvider, $urlRouterProvider) {
   $stateProvider
       .state('home', {
@@ -23,7 +30,7 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       })
       .state('login', {
         url: "/login",
-        templateUrl: "partials/login.html",
+        templateUrl: "partials/login.html"
       })
       .state('register', {
         url: "/register",

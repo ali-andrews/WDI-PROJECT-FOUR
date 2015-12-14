@@ -1,7 +1,14 @@
 <section>
-  LOGIN PAGE
-  <form>
-    <input type="text" />
-    <input type="submit" />
-  </form>
+<h3>Login</h3>
+<form id="authorize" ng-submit="users.authorize()">
+  <label for="username">User name</label>
+  <input type="text" name="username" placeholder="What is your username?" ng-model="users.user.username">
+
+  <label for="password">Password</label>
+  <input type="password" name="password" placeholder="What is your password?" ng-model="users.user.password">
+
+  <input type="submit" value="Login">
+</form>
+
+
 </section>

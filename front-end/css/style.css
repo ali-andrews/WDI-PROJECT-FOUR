@@ -16,6 +16,14 @@ body {
 }
 
 
+img#sectionone {
+  background-position: center;
+  /*background-image: url (../css/images/homepage_three.png);*/
+  background-repeat:no-repeat;
+  background-position: center center;
+  min-height: 100%;
+}
+
 
 .btn-secondary-outline {
     border: 1.5px solid black;

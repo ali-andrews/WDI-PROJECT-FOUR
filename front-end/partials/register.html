@@ -1,6 +1,7 @@
 <section>
-  <h3>Sign Up</h3>
+<div class="register" ng-show="!users.isLoggedIn()">
   <form id="join" ng-submit="users.join()">
+  <h3>Sign Up</h3>
   <br>
     <label for="username">User name</label>
     <input type="text" name="username" placeholder="Username" ng-model="users.user.username">
@@ -33,8 +34,50 @@
     <input type="password" name="password" placeholder="Re-Entered-Password" ng-model="users.user.twopassword">
     </br>
     <br>
+    <!-- <li><input type="submit" ng-click="productViewController.addToCart()" /></li> -->
     <input type="submit" value="Register">
     </br>
   </form>
+  </div>
+
+
+
+<div ng-show="users.isLoggedIn()"><h1>Hello {{users.user.firstname}}</h1><p><br> Welcome to Baby Bag - how can we help you (and you're little one)? </br></p><br><p> Here are some of our latest products we think you might like: </br></p></div>
+
+
+<!-- fourth section - Information -->
+<div ng-show="users.isLoggedIn()">
+<div id="information" class="pad-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Additional information</h2>
+          </div>
+          <div class="panel-body lead">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit adipiscing blandit. Aliquam placerat, velit a fermentum fermentum, mi felis vehicula justo, a dapibus quam augue non massa. Duis euismod, augue et tempus consequat, lorem mauris porttitor quam, consequat ultricies mauris mi a metus. Phasellus congue, leo sed ultricies tristique, nunc libero tempor ligula, at varius mi nibh in nisi. Aliquam erat volutpat. Maecenas rhoncus, neque facilisis rhoncus tempus, elit ligula varius dui, quis amet.
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2 class="panel-title">Additional information</h2>
+          </div>
+          <div class="panel-body lead">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit adipiscing blandit. Aliquam placerat, velit a fermentum fermentum, mi felis vehicula justo, a dapibus quam augue non massa. Duis euismod, augue et tempus consequat, lorem mauris porttitor quam, consequat ultricies mauris mi a metus. Phasellus congue, leo sed ultricies tristique, nunc libero tempor ligula, at varius mi nibh in nisi. Aliquam erat volutpat. Maecenas rhoncus, neque facilisis rhoncus tempus, elit ligula varius dui, quis amet.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
 
 </section>
+
+
+

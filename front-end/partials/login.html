@@ -1,6 +1,7 @@
 <section>
-<h3>Login</h3>
+<div class="login" ng-show="!users.isLoggedIn()">
 <form id="authorize" ng-submit="users.authorize()">
+<h3>Login</h3>
   <label for="email">Email:</label>
   <input type="text" name="email" placeholder="Email" ng-model="users.user.email">
 
@@ -9,8 +10,10 @@
 
   <input type="submit" value="Login">
 </form>
+</div>
 
-<div ng-show="users.isLoggedIn()"><h1>Hello {{users.user.firstname}}</h1><p> Welcome to Baby Bag - how can we help you (and you're little one)? </p></div>
+
+<div ng-show="users.isLoggedIn()"><h1>Hello {{users.user.firstname}}</h1><p><br> Welcome to Baby Bag - how can we help you (and you're little one)? </br></p><br><p> Here are some of our latest products we think you might like: </br></p></div>
 
 
 <!-- fourth section - Information -->

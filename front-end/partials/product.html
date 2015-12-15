@@ -1,7 +1,20 @@
 <section ng-controller="ProductViewController as productViewController">
-  <h1>{{ productViewController.product.name }}</h1>
-  <p>{{ productViewController.product.description }}</p>
-  <h3>£{{ productViewController.product.price }}</h3>
-  <p><input type="button" value="Add to cart" ng-click="productViewController.addToCart()" /></p>
-  <p><img src="{{ productViewController.product.image }}" /></p>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6 col-md-4">
+        <ul>
+          <li>
+            <ul>
+              <li><h1>{{ productViewController.product.name }}</h1></li>
+              <li><p>{{ productViewController.product.description }}</p></li>
+              <li><h3>£{{ productViewController.product.price }}</h3></li>
+              <li><input type="button" value="Add to cart" ng-click="productViewController.addToCart()" /></li>
+              <li><img src="{{ productViewController.product.image }}" /></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>

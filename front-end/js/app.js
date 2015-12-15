@@ -40,5 +40,11 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       .state('cart', {
         url: "/cart",
         templateUrl: "partials/cart.html",
-      });
+      })
+      .state('profile', {
+        url: "/profile",
+        templateUrl: "partials/profile.html",
+      })
+      
+$urlRouterProvider.otherwise("/");
 }

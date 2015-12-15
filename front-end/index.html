@@ -50,11 +50,13 @@
           <li><a ui-sref-active="active" ui-sref="about">About</a></li>
           <li><a ui-sref-active="active" ui-sref="register">Register</a></li>
           <li><a ui-sref-active="active" ng-show="!users.isLoggedIn()" ui-sref="login">Login</a></li>
-          <li><a ui-sref-active="active" ng-show="users.isLoggedIn()" ng-click="users.disappear()">Logout</a></li>
+          <li><a ui-sref-active="active" ui-sref="home" ng-show="users.isLoggedIn()" ng-click="users.disappear()">Logout</a></li>
     
 
       <ul class="nav navbar-nav navbar-right">
+      <li><a ui-sref-active="active" ng-show="users.isLoggedIn()" >Profile</a></li>
         <li><a ui-sref-active="active" ui-sref="cart">My Cart</a></li>
+
       </ul>  
   </nav>
 

@@ -2,8 +2,8 @@ angular
   .module('babyBagApp')
   .controller('UserController', UserController)
 
-UserController.$inject = ['User', 'TokenService']
-function UserController(User, TokenService) {
+UserController.$inject = ['User', 'TokenService', '$location']
+function UserController(User, TokenService, $location) {
   var self = this;
 
   self.all    = [];
@@ -24,11 +24,13 @@ function UserController(User, TokenService) {
   self.authorize = function() {
     User.authorize(self.user, handleLogin);
     console.log("click I DONT WORK")
+    $location.path('/profile')
   }
 
   self.join = function() {
     User.join(self.user, handleLogin);
-    console.log(self.user);
+    console.log(self.user)
+    $location.path('/profile')
   }
 
   self.disappear = function() {

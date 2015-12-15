@@ -1,5 +1,8 @@
 /* Structure */
 
+
+
+
 .ga {
   background: url('/css/images/homepage_three.png') no-repeat center center;
   position: fixed;
@@ -12,6 +15,7 @@
 .item.active {
   margin-top: 650px;
 }
+
 
 
 

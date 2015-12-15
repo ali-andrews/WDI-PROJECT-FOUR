@@ -1,12 +1,8 @@
-<div ng-show="!users.isLoggedIn()">
-You need to register in order to view this page.
-</div>
-
 <!-- fourth section - Information -->
 <div ng-show="users.isLoggedIn()">
 <div id="information" class="pad-section">
-<h1><strong>Hello {{users.user.firstname}}<strong></h1>
-<p><br> Welcome to Baby Bag - how can we help you (and you're little one) today? </br></p><br><p> Here are some of our latest products we think you might like: </br></p></div>
+<h1><strong>Hello {{users.user.firstname}},<strong></h1>
+<p><br> Welcome to Baby Bag - how can we help you (and you're little one) today? </br></p><p> Here are some of our latest products we think you might like: </p></div>
 
   <div class="container">
     <div class="row">

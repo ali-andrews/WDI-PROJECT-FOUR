@@ -9,7 +9,7 @@
               <li><h1>{{ productViewController.product.name }}</h1></li>
               <li><p>{{ productViewController.product.description }}</p></li>
               <li><h3>£{{ productViewController.product.price }}</h3></li>
-              <li><input type="button" value="Add to cart" ng-click="productViewController.addToCart()" /></li>
+              <li><input type="button" class="btn btn-secondary-outline" value="Add to cart" ng-click="productViewController.addToCart()" /></li>
               <li><img src="{{ productViewController.product.image }}" /></li>
             </ul>
           </li>

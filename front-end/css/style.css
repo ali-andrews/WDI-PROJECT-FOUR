@@ -1,29 +1,83 @@
 /* Structure */
 
 
+body {
+  font: helvetica;
+}
+
+.register {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.form-horizontal {
+  margin-left: 30px;
+  margin-right: 160px;
+}
 
 
-.ga {
+
+.btn-secondary-outline {
+    border: 1.5px solid black;
+    color: black;
+    background-color: white;
+}
+
+.btn-primary.btn-lg {
+  border: 1.5px solid black;
+  color: black;
+  background-color: white;
+}
+
+.btn-default {
+  border: 1.5px solid black;
+  color: black;
+  background-color: white;
+}
+
+.signuptitle {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 3px;
+  font-size: 20px;
+  padding: 10px;
+
+}
+
+nav.navbar.navbar-default {
+  margin: 0;
+}
+
+
+div.ga.jumbotron.ng-scope{
   background: url('/css/images/homepage_three.png') no-repeat center center;
   position: fixed;
   width: 100%;
-  height: 750px; same height as jumbotron 
-  margin-top: 
+  height: 750px; same height as jumbotron  
 }
+
 
 
 .item.active {
   margin-top: 650px;
 }
 
+.title {
+  text-align: center;
+  color: black;
+}
 
+/*NAVBAR*/
+div.container-fluid {
+background-color: white;
+color: black;
 
-
+}
 
 section {
     height:500px;
-    padding-top:50px;
-    padding-bottom:50px;
+/*    padding-top:50px;
+    padding-bottom:50px;*/
     overflow:auto;
 }
 

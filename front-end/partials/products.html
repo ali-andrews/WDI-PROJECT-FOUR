@@ -1,11 +1,13 @@
 <section ng-controller="ProductController as productController">
-  <h1>Products</h1>
-  <ul>
-    <li ng-repeat="product in productController.products">
-      <a ui-sref-active="active" ui-sref="viewProduct({id:product._id})">
-        <img src="{{ product.image }}" width="200" />
-        {{ product.name }} <strong>£{{ product.price }}</strong>
-      </a>      
-    </li>
-  </ul>
+  <div class="container-fluid">
+    <h1>Products</h1>
+    <div class="row" ng-repeat="row in productController.products">
+      <li class="col-xs-12 col-md-4" ng-repeat="product in row">
+        <a ui-sref-active="active" ui-sref="viewProduct({id:product._id})">
+          <img src="{{ product.image }}" width="200" />
+          {{ product.name }} <strong>£{{ product.price }}</strong>
+        </a>      
+      </li>
+    </div>
+  </div>
 </section>

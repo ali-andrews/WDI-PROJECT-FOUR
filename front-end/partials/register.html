@@ -2,39 +2,36 @@
 <div class="register" ng-show="!users.isLoggedIn()">
 <div class="form-group">
   <form id="join" ng-submit="users.join()">
+
+  <div class="signuptitle"
   <h3>Sign Up</h3>
+  </div>
   <br>
     <label for="username">User name</label>
     <input type="text" class="form-control" name="username" placeholder="Username" ng-model="users.user.username">
-</br>
-<label for="email">Email</label>
-<input type="text" class="form-control" name="email" placeholder="Email" ng-model="users.user.email">
-
-<br>
+  <br>
+    <label for="email">Email</label>
+    <input type="text" class="form-control" name="email" placeholder="Email" ng-model="users.user.email">
+  <br>
     <label for="First name">First Name</label>
     <input type="text" class="form-control" name="firstname" placeholder="First name" ng-model="users.user.firstname">
-    </br>
-    <br>
+  <br> 
     <label for="street">Street Address</label>
     <input type="text" class="form-control" name="street" placeholder="Your street address" ng-model="users.user.street">
-    </br>
-    <br>
+  <br> 
     <label for="city">City</label>
     <input type="text" class="form-control" name="city" placeholder="What city do you live in?" ng-model="users.user.city">
-    </br>
-    <br>
+  <br>
     <label for="postcode">Postcode</label>
     <input type="text" class="form-control" name="status" placeholder="Your postcode?" ng-model="users.user.postcode">
-    </br>
-    <br>
+  <br> 
     <label for="password">Password</label>
     <input type="password" class="form-control" name="password" placeholder="Password" ng-model="users.user.password">
-    </br>
-    <br>
+  <br>
     <label for="twopassword">Re-Enter Password</label>
     <input type="password" class="form-control" name="password" placeholder="Re-Entered-Password" ng-model="users.user.twopassword">
-    </br>
-    <br>
+  <br>
+
     <!-- <li><input type="submit" ng-click="productViewController.addToCart()" /></li> -->
     <input type="submit" class="btn btn-default" value="Register">
     </br>
@@ -105,3 +102,4 @@
 
 
 
+<br>

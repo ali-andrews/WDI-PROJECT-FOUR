@@ -9,9 +9,20 @@ angular
 // function MainController() {
 // }
 
+function chunk(arr, size) {
+  var newArr = [];
+  for (var i=0; i<arr.length; i+=size) {
+    newArr.push(arr.slice(i, i+size));
+  }
+  return newArr;
+}
+
 ProductController.$inject = ['Product'];
 function ProductController(Product) {
-  this.products = Product.query();
+  var self = this;
+  Product.query(function(data) {
+    self.products = chunk(data, 3);
+  });
 }
 
 ProductViewController.$inject = ["$window", "$stateParams", 'Product'];

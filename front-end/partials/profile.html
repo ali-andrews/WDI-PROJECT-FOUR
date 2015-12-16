@@ -7,9 +7,10 @@
 
 
 <!-- NOTE- ASK MIKE ABOUT THIS SECTION -->
-{{ users.paymentSuccessful }}
-<section ng-show="users.paymentSuccessful">
-  PAYMENT SUCCESSFUL {{ users.totalAmount }}
+
+<section ng-show="users.paymentSuccessful" id="payments">
+  Your payment of {{ users.totalAmount }}. was successfull! 
+  <br>A confirmation will be sent to your email shortly. 
 </section>
 
 <div class="profileproducts">

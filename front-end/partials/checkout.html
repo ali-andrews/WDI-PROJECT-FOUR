@@ -1,9 +1,8 @@
 <section ng-controller="CartController as cartController">
-  <h3> Checkout</h3>
   <div class="payment-form">
-    <form id="payment-form" ng-submit="cartController.checkout()">
+    <form id="payment-form-2" ng-submit="cartController.checkout()">
       <span class="payment-errors"></span>
-
+      <h5>Check Out</h5>
       <strong>Total: £{{ cartController.totalAmount }}</strong>
       <div class="form-row">
         <label>

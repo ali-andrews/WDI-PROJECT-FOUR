@@ -1,7 +1,6 @@
 var stripe = require("stripe")(process.env.PROJECT_STRIPE_SECRET);
 
 function checkout(req, res) {
-console.log(process.env.PROJECT_STRIPE_SECRET)
   var stripeToken = req.body.payToken;
 
   var charge = stripe.charges.create({
@@ -12,8 +11,7 @@ console.log(process.env.PROJECT_STRIPE_SECRET)
   }, function(err, charge) {
     if (err && err.type === 'StripeCardError') {
       // The card has been declined
-    }
-    else {
+    } else {
       console.log(req.body)
       var recieve = req.body
       res.status(200).json({

@@ -1,18 +1,21 @@
 <!-- fourth section - Information -->
 <div ng-show="users.isLoggedIn()">
 <div id="information" class="pad-section">
-<h1><strong>Hello {{users.user.firstname}},<strong></h1>
-<p><br> Welcome to Baby Bag - how can we help you (and you're little one) today? </br></p><p> Here are some of our latest products we thought you might like: </p></div>
+<h4><strong>Hello {{users.user.firstname}},</strong></h4>
+<div class="profilepage">
+<p><br><strong> Welcome to Baby Bag - </strong>how can we help you (and you're little one) today? </br></p><p> Here are some of our latest products we thought you might like: </p></div>
 
 
-<!-- ASK ABOUT THIS SECTION -->
+<!-- NOTE- ASK MIKE ABOUT THIS SECTION -->
 <!-- <div ng-show="users.checkout()"> 
 <section ng-controller="CartController as cartController">
+
+<strong>Your purchases: </strong>
 <strong>Thanks for you're order- You're delivery is on its way! <br> You're total was £{{ cartController.totalAmount }} <br> We will email you with further delivery options</strong>
 </section>
 </div> -->
 
-
+<div class="profileproducts">
 <div class="container">
     <div class="row">
       <div class="col-sm-6">
@@ -58,6 +61,7 @@
            Made from a super-soft pima cotton in a light pointelle knit, this footie is ideal for warmer months. It features our signature Angel Wings at the back and has snap front fastening for easy changing. Available in sizes 0M-18M.
           </div>
         </div>
+      </div>
       </div>
 
     </div>

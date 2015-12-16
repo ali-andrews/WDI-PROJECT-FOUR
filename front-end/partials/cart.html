@@ -1,13 +1,19 @@
-<h1> MY CART</h1>
+<h3> MY CART</h3>
 
+<div class="row">
 <section ng-controller="CartController as cartController">
   <ul>
-    <li ng-repeat="product in cartController.products">
+    <div class="col-md-6" ng-repeat="product in cartController.products">
       <img src="{{ product.image }}" width="200" />
       {{ product.name }} <strong>£{{ product.price }}</strong>
-    </li>
+    </div>
   </ul>
-  <strong>Total: £{{ cartController.totalAmount }}</strong>
   <br>
+  <div class="col-md-6">
+  <strong> Total: £{{ cartController.totalAmount }}</strong>
   <a ui-sref-active="active" class="btn btn-secondary-outline" ui-sref="checkout"> Checkout</a>
+  </div>
 </section>
+</div>
+
+

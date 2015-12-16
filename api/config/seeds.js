@@ -1,6 +1,6 @@
 var mongoose    = require('mongoose');
 
-var databaseUrl = 'mongodb://localhost:27017/babybag';
+var databaseUrl = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/babybag';
 mongoose.connect(databaseUrl);
 
 // Require models

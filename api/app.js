@@ -12,7 +12,10 @@ var passport   = require("passport");
 var User = require ('./models/user');
 
 //Mongoose Database Structure
-mongoose.connect("mongodb://localhost:27017/babybag");
+// mongoose.connect("mongodb://localhost:27017/babybag");
+var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost:27017/babybag';
+moongoose.connect(mongoUri);
+
 
 // Setup Passport
 require('./config/passport')(passport);
@@ -74,5 +77,5 @@ app.use(passport.initialize());
 var router = require(__dirname + '/config/routes');
 app.use("/", router);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000 )
 console.log("Express is listening on localhost:3000");

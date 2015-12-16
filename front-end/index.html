@@ -1,8 +1,8 @@
 <!doctype html>
 <html ng-app="babyBagApp">
 <head>
-<title>Baby bag</title>
-<meta charset="utf-8">
+  <title>Baby bag</title>
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,19 +32,17 @@
   <script type="text/javascript" src="./js/resources/user.js"></script>
   <script type="text/javascript" src="./js/resources/product.js"></script>
   <script type="text/javascript" src="./js/resources/checkout.js"></script>
+  <script type="text/javascript" src="./js/resources/checkoutService.js"></script>
   <script type="text/javascript" src="./js/controllers.js"></script>
   <script type="text/javascript" src="./js/userController.js"></script>
   <script type="text/javascript" src="./js/homeController.js"></script>
   <script type="text/javascript" src="./js/public/fullpage.js"></script>
-
-
-
-
-
 </head>
+
 <body ng-controller="UserController as users">
 
-  <nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
+  
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -65,62 +63,16 @@
           <li><a ui-sref-active="active" ui-sref="about">About</a></li>
           <li><a ui-sref-active="active" ui-sref="register" ng-hide="users.isLoggedIn()">Register</a></li>
           <li><a ui-sref-active="active" ng-hide="users.isLoggedIn()" ui-sref="login">Login</a></li>
-          
-    
 
       <ul class="nav navbar-nav navbar-right">
-      <li><a ui-sref-active="active" ui-sref="profile" ng-show="users.isLoggedIn()" >Profile</a></li>
+        <li><a ui-sref-active="active" ui-sref="profile" ng-show="users.isLoggedIn()" >Profile</a></li>
         <li><a ui-sref-active="active" ui-sref="cart">My Cart</a></li>
         <li><a ui-sref-active="active" ui-sref="home" ng-show="users.isLoggedIn()" ng-click="users.disappear()">Logout</a></li>
-
       </ul>  
-  </nav>  
-
-<!-- 
-  
-  <nav class="tabs"> 
-    <a ui-sref-active="active" ui-sref="home">Home</a>
-    <a ui-sref-active="active" ui-sref="products">Products</a>
-    <a ui-sref-active="active" ui-sref="about">About</a>
-    <a ui-sref-active="active" ui-sref="register">Register</a>
-    <a ui-sref-active="active" ui-sref="login">Login</a>
-    <a ui-sref-active="active" ui-sref="cart">My Cart</a>
-  </nav> -->
-
-  <div class="wrapper">    
-    <div ui-view></div>
-  </div>
+    </nav>  
+    <div class="wrapper">    
+      <div ui-view></div>
+    </div>
     
   </body>
   </html>
-
-  
-  <!-- {{main.characterTest.test}}
-    <h2 ng-show="main.selectedCharacter">{{ main.selectedCharacter.firstName }} wields a <span class="{{ main.selectedCharacter.lightsaber | lowercase }}">{{ main.selectedCharacter.lightsaber }}</span> lightsaber</h2>
-    
-    <form name="main.newCharacter" ng-submit="main.addCharacter()">
-      <label>Name</label>
-      <input type="text" name="name" ng-model="main.character.name">
-      <label>Lightsaber</label>
-      <input type="text" name="lightsaber" ng-model="main.character.lightsaber">
-      <input type="submit" value="Add">
-    </form>
-
-    <h1>The Lightsaber Database</h1>
-    <ul>
-      <li ng-repeat="character in main.characters" ng-click="main.selectCharacter(character)">
-        {{ character.name }}'s lightsaber is <span class="{{ character.lightsaber | lowercase }}">{{ character.lightsaber }}</span> <a href="#" ng-click="main.editCharacter(character)">Edit</a> <button ng-click="main.deleteCharacter(character)">Delete</button>
-      </li>
-    </ul>
-  </main> -->
-
- <!--  <section ng-controller="EpisodeController as epi">
-    <h1>The Episode Database</h1>
-
-    <h2 ng-show="epi.selectedEpisode">Released {{epi.selectedEpisode.release_date}} by {{epi.selectedEpisode.studio}}</h2>
-    <ul>
-      <li ng-repeat="episode in epi.episodes" ng-click="epi.selectEpisode(episode)">
-        {{episode.name}}, by Mr. {{episode.surname}}
-      </li>
-    </ul>
-  </section> -->

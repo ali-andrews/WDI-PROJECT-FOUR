@@ -7,13 +7,10 @@
 
 
 <!-- NOTE- ASK MIKE ABOUT THIS SECTION -->
-<!-- <div ng-show="users.checkout()"> 
-<section ng-controller="CartController as cartController">
-
-<strong>Your purchases: </strong>
-<strong>Thanks for you're order- You're delivery is on its way! <br> You're total was £{{ cartController.totalAmount }} <br> We will email you with further delivery options</strong>
+{{ users.paymentSuccessful }}
+<section ng-show="users.paymentSuccessful">
+  PAYMENT SUCCESSFUL {{ users.totalAmount }}
 </section>
-</div> -->
 
 <div class="profileproducts">
 <div class="container">

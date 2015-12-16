@@ -45,16 +45,19 @@ function ProductViewController($window, $stateParams, Product) {
   }
 }
 
-CartController.$inject = ["$window", "$scope", "Checkout"];
-function CartController($window, $scope, Checkout) {
-  var totalAmount = 0;  
+CartController.$inject = ["$window", "$scope", "Checkout", "$state", "checkoutService"];
+function CartController($window, $scope, Checkout, $state, checkoutService) {
+  var self = this;
+  this.totalAmount = 0;  
   this.products = angular.fromJson($window.localStorage.getItem("cart")) || [];  
 
-  this.products.forEach(function(p) {    
-    totalAmount += p.price;
-  });
+  this.totalAmount = this.products.reduce(function(prev, current) { 
+    return prev + current.price;
+  }, 0).toFixed(2);
 
-  var amountToSend = totalAmount; //sends to back end
+  this.paymentSuccessful = false;
+
+  var amountToSend = self.totalAmount; //sends to back end
 
     jQuery(function($) {    //creates token
       $('#payment-form').submit(function(event) {
@@ -85,8 +88,13 @@ function CartController($window, $scope, Checkout) {
           amount:amountToSend
         }
         Checkout.checkout(data, function() {
-          console.log('done')
-          $window.location="/#profile"
+          console.log("done");
+          $scope.$evalAsync(function(){
+            self.paymentSuccessful = true;
+            checkoutService.totalAmount = self.totalAmount;
+            checkoutService.success = true;
+            $state.go('profile');
+          })
         })
 
       }

@@ -2,12 +2,22 @@ angular
   .module('babyBagApp')
   .controller('UserController', UserController)
 
-UserController.$inject = ['User', 'TokenService', '$location']
-function UserController(User, TokenService, $location) {
+UserController.$inject = ['User', 'TokenService', '$location', 'checkoutService', '$rootScope', '$timeout'];
+function UserController(User, TokenService, $location, checkoutService, $rootScope, $timeout) {
+
   var self = this;
 
-  self.all    = [];
-  self.user  = {};
+  self.all = [];
+  self.user = {};
+
+  $rootScope.$on('$stateChangeSuccess', function() {
+    if(checkoutService.success) {
+      self.paymentSuccessful = true;
+      self.products = checkoutService.products;
+      self.totalAmount = checkoutService.totalAmount;
+      checkoutService.success = false;
+    }
+  });
 
  function handleLogin(res) {
    var token = res.token ? res.token:null;

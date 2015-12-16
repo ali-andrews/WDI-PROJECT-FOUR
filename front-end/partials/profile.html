@@ -2,9 +2,18 @@
 <div ng-show="users.isLoggedIn()">
 <div id="information" class="pad-section">
 <h1><strong>Hello {{users.user.firstname}},<strong></h1>
-<p><br> Welcome to Baby Bag - how can we help you (and you're little one) today? </br></p><p> Here are some of our latest products we think you might like: </p></div>
+<p><br> Welcome to Baby Bag - how can we help you (and you're little one) today? </br></p><p> Here are some of our latest products we thought you might like: </p></div>
 
-  <div class="container">
+
+<!-- ASK ABOUT THIS SECTION -->
+<!-- <div ng-show="users.checkout()"> 
+<section ng-controller="CartController as cartController">
+<strong>Thanks for you're order- You're delivery is on its way! <br> You're total was £{{ cartController.totalAmount }} <br> We will email you with further delivery options</strong>
+</section>
+</div> -->
+
+
+<div class="container">
     <div class="row">
       <div class="col-sm-6">
         <div class="panel panel-default">

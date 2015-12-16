@@ -1,4 +1,4 @@
-<h3> My Cart</h3>
+<h3> MY CART</h3>
 
 <section ng-controller="CartController as cartController">
   <ul>
@@ -8,6 +8,6 @@
     </li>
   </ul>
   <strong>Total: £{{ cartController.totalAmount }}</strong>
-  
-  <input type="submit" class="btn btn-secondary-outline" value="Check Out">
+  <br>
+  <a ui-sref-active="active" class="btn btn-secondary-outline" ui-sref="checkout"> Checkout</a>
 </section>

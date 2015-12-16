@@ -3,6 +3,23 @@
 
 body {
   font: helvetica;
+  color: black;
+}
+
+p {
+  color: black;
+}
+
+h1 {
+  color: black;
+}
+
+small {
+  color: black;
+}
+
+#aboutwords {
+  padding: 30px;
 }
 
 .register {
@@ -16,6 +33,49 @@ body {
 }
 
 
+h2 {
+  font-size: 20px;
+}
+
+#aboutpage {
+  margin-top: 75px;
+  text-align: center;
+  color: black;
+  padding: 30px;
+}
+
+section.ng-scope {
+  margin: 0 auto;
+}
+
+div.container-fluid {
+/*  margin-top: 10px;
+  padding: 20px;*/
+
+}
+
+
+.grid {
+  text-align: center;
+  padding: 10px;
+  margin-top: -30px;
+  margin-right: 30px;
+  margin-left: 30px;
+  padding: 10px
+}
+
+
+
+div.col-xs-12.col-md-4.ng-scope {
+  
+  text-align: center;
+  border-style: double;
+  border-width: 8px;
+  
+}
+
+
+
 img#sectionone {
   background-position: center;
   /*background-image: url (../css/images/homepage_three.png);*/
@@ -23,6 +83,8 @@ img#sectionone {
   background-position: center center;
   min-height: 100%;
 }
+
+
 
 
 .btn-secondary-outline {

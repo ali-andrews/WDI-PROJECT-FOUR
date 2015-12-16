@@ -45,8 +45,8 @@ function ProductViewController($window, $stateParams, Product) {
   }
 }
 
-CartController.$inject = ["$window"];
-function CartController($window) {
+CartController.$inject = ["$window", "$scope", "Checkout"];
+function CartController($window, $scope, Checkout) {
   var totalAmount = 0;  
   this.products = angular.fromJson($window.localStorage.getItem("cart"));  
 
@@ -55,4 +55,15 @@ function CartController($window) {
   });
 
   this.totalAmount = totalAmount;
+  this.checkout = function() {
+    var order = {
+      amount: totalAmount*100,
+      number: $scope.number,
+      cvc: $scope.cvc,
+      expYear: $scope.expYear,
+      expMonth: $scope.expMonth
+    }
+    Checkout.checkout(order)
+    $window.location="/#profile"
+  }
 }

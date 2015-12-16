@@ -46,6 +46,13 @@ function MainRouter($stateProvider, $urlRouterProvider) {
         url: "/profile",
         templateUrl: "partials/profile.html",
       })
+      .state('checkout', {
+        url: "/checkout",
+        templateUrl: "partials/checkout.html",
+      })
+
+
+
       
 $urlRouterProvider.otherwise("/");
 }

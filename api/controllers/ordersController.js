@@ -3,7 +3,7 @@ function checkout(req, res) {
     "sk_test_rReIqRuAFiWgyu3hQlnx2uYT"
   );
   stripe.charges.create({
-    amount: req.params.amount,
+    amount: req.body.amount,
     currency: "gbp",
     card: {
         number: '4242424242424242',
@@ -14,6 +14,7 @@ function checkout(req, res) {
     description: "Charge for test@example.com"
   }, function(err, charge) {
     if (err) {
+      console.log(err)
       res.status(500).send();
     }
     else {

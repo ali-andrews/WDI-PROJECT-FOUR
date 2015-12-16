@@ -1,0 +1,35 @@
+<h3> Checkout</h3>
+
+<section ng-controller="CartController as cartController">
+<form id="payment-form" ng-submit="cartController.checkout()">
+  <span class="payment-errors"></span>
+
+  <strong>Total: £{{ cartController.totalAmount }}</strong>
+  <div class="form-row">
+    <label>
+      <span>Card Number</span>
+      <input type="text" size="20" ng-model="number"/>
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      <span>CVC</span>
+      <input type="text" size="4" ng-model="cvc"/>
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      <span>Expiration (MM/YYYY)</span>
+      <input type="text" size="2" ng-model="expMonth"/>
+    </label>
+    <span> / </span>
+    <input type="text" size="4" ng-model="expYear"/>
+  </div>
+
+  <button type="submit">Submit Payment</button>
+</form>
+  
+</section>
+

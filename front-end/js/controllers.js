@@ -48,7 +48,7 @@ function ProductViewController($window, $stateParams, Product) {
 CartController.$inject = ["$window", "$scope", "Checkout"];
 function CartController($window, $scope, Checkout) {
   var totalAmount = 0;  
-  this.products = angular.fromJson($window.localStorage.getItem("cart"));  
+  this.products = angular.fromJson($window.localStorage.getItem("cart")) || [];  
 
   this.products.forEach(function(p) {    
     totalAmount += p.price;

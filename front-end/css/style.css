@@ -312,3 +312,7 @@ section {
   background-image: url ("http://thegracetales.com/wp-content/uploads/2015/12/R1T6216.jpg");
   background-size: cover;
 }
+
+#first-jumbo {
+  min-height: calc(~"100vh - 50px");
+}

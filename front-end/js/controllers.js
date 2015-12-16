@@ -93,6 +93,7 @@ function CartController($window, $scope, Checkout, $state, checkoutService) {
             self.paymentSuccessful = true;
             checkoutService.totalAmount = self.totalAmount;
             checkoutService.success = true;
+            $window.localStorage.removeItem("cart")
             $state.go('profile');
           })
         })

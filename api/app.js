@@ -14,7 +14,7 @@ var User = require ('./models/user');
 //Mongoose Database Structure
 // mongoose.connect("mongodb://localhost:27017/babybag");
 var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost:27017/babybag';
-moongoose.connect(mongoUri);
+// moongoose.connect(mongoUri);
 
 
 // Setup Passport

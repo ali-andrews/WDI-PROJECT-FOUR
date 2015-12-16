@@ -88,6 +88,14 @@ h3 {
 }
 
 
+a {
+  font-weight: 3px;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  color: black;
+}
+
 
 
 .panel-title {

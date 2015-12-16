@@ -60,7 +60,7 @@ function CartController($window, $scope, Checkout, $state, checkoutService) {
   var amountToSend = self.totalAmount; //sends to back end
 
     jQuery(function($) {    //creates token
-      $('#payment-form').submit(function(event) {
+      $('#payment-form-2').submit(function(event) {
         var $form = $(this);
 
         // Disable the submit button to prevent repeated clicks
@@ -74,7 +74,7 @@ function CartController($window, $scope, Checkout, $state, checkoutService) {
     });
 
     function stripeResponseHandler(status, response) {
-      var $form = $('#payment-form');
+      var $form = $('#payment-form-2');
 
       if (response.error) {
         // Show the errors on the form
